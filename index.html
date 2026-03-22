@@ -1,57 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
+
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Thumbnail Designs</title>
         <style>
-            *{
-                margin:0%;
-                padding:0%;
-                box-sizing: border-box;
+        * {
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            height: 100vh;
+            width: 100vw;
+            overflow-x: hidden
+        }
+
+        header {
+            background: #222;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 10px;
+        }
+
+        header p {
+            color: rgb(255, 109, 109);
+            margin-bottom: 10px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 15px;
+            color: #666;
+        }
+
+        main {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        main img {
+            width: 600px;
+            margin: 10px;
+        }
+
+        .marquee {
+            white-space: nowrap;
+            overflow: hidden;
+            display: block;
+        }
+
+        .marquee::before {
+            content: "© Built by Ashutosh Jha";
+            display: inline-block;
+            padding-left: 100%;
+            animation: scroll-right 8s linear infinite;
+        }
+
+        @keyframes scroll-right {
+            from {
+                transform: translateX(-100%);
             }
-            html, body{
-               font-family: Arial, Helvetica, sans-serif;
-                height:100vh;
-                width:100vw;
+
+            to {
+                transform: translateX(0%);
             }
-            header {
-              background: #222;
-              color: #fff;
-               padding: 20px;
-               text-align: center;
-            }   
-            header h1{
-                margin: 10px;
-            }
-            header p{
-                color: rgb(255, 109, 109);
-                margin-bottom: 10px;
-            }
-            footer {
-              text-align: center;
-              padding: 15px;
-              color: #666;
-            }
-            main{
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-            }
-            main img{
-                width: 600px;
-                margin: 10px;
-            }
+        }
         </style>
     </head>
+
     <body>
 
         <header>
             <h1>Design Projects</h1>
             <p>A collection of my Thumbnail Designs</p>
-            <marquee behavior="scroll" direction="right">© Built by Ashutosh
-                Jha</marquee>
+            <div class="marquee">
+                © Built by Ashutosh Jha
+            </div>
         </header>
 
         <main>
@@ -61,4 +96,5 @@
             <img src="./images/one shot.jpg" alt>
         </main>
     </body>
+
 </html>
